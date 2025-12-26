@@ -60,4 +60,61 @@ Referencia:
 
 Los datasets utilizados en esta POC tienen un propósito exclusivamente exploratorio y demostrativo. No se utilizan datos reales de clientes ni información sensible, y no se busca representar un entorno productivo final.
 
+## Arquitectura propuesta (alto nivel)
+
+La arquitectura propuesta para esta Prueba de Concepto (POC) se plantea de forma simple y modular, con el objetivo de facilitar la comprensión del flujo de datos y la interacción con modelos de Inteligencia Artificial Generativa.
+
+A alto nivel, el flujo del POC se compone de las siguientes etapas:
+
+1. **Adquisición de datos**  
+   Carga de datasets de proyectos inmobiliarios, tales como archivos IFC y datos sintéticos estructurados.
+
+2. **Procesamiento de datos**  
+   Extracción de información relevante desde los datasets y transformación de los datos técnicos a un formato estructurado o textual comprensible (por ejemplo, JSON o texto descriptivo).
+
+3. **Diseño de prompts**  
+   Definición de prompts que permitan guiar al modelo de Generative AI para interpretar la información del proyecto y responder preguntas en lenguaje natural.
+
+4. **Interacción con Generative AI**  
+   El modelo de GenAI recibe una pregunta del usuario y genera una respuesta basada en la información procesada del proyecto inmobiliario.
+
+5. **Salida de resultados**  
+   Presentación de respuestas en lenguaje natural, enfocadas en describir características, componentes y atributos del proyecto inmobiliario.
+
+## Ejemplos de preguntas
+
+A continuación se presentan ejemplos de preguntas que pueden realizarse al sistema durante la demostración de la POC:
+
+- ¿Qué tipo de proyecto inmobiliario representa este dataset?
+- ¿Cuántos espacios o ambientes contiene el proyecto?
+- ¿Cuáles son los principales componentes del edificio?
+- ¿Se puede generar un resumen general del proyecto?
+- ¿Qué información técnica relevante se puede extraer a partir de los datos disponibles?
+
+Estas preguntas ilustran cómo la información técnica puede ser consultada mediante lenguaje natural, facilitando la comprensión del proyecto.
+
+## Resultados esperados y próximos pasos
+
+### Resultados esperados
+
+Se espera que esta Prueba de Concepto (POC) permita demostrar que:
+
+- Los datos técnicos de proyectos inmobiliarios pueden ser procesados y transformados en información comprensible.
+- Los modelos de Inteligencia Artificial Generativa pueden responder preguntas en lenguaje natural a partir de datasets estructurados y semi-estructurados.
+- El enfoque propuesto tiene valor potencial para casos de uso como análisis de proyectos, soporte a ventas y comprensión de información técnica.
+
+Estos resultados buscan validar la viabilidad del enfoque y servir como base para futuras iteraciones.
+
+### Próximos pasos
+
+Como pasos posteriores a esta propuesta inicial, se consideran las siguientes actividades:
+
+- Implementar un prototipo funcional mínimo (por ejemplo, mediante un notebook o script).
+- Ajustar y mejorar los prompts utilizados para la interacción con el modelo de GenAI.
+- Evaluar la integración con servicios de Generative AI en Google Cloud (por ejemplo, Vertex AI).
+- Analizar la ampliación del POC a otros datasets o escenarios de uso más avanzados.
+
+Estos pasos se plantean como una evolución progresiva del POC, sin comprometer aún una implementación productiva.
+
+
 
