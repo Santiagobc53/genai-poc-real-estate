@@ -1,0 +1,4 @@
+# Librerías mínimas para ejecutar el POC
+ifcopenshell
+jupyter
+notebook

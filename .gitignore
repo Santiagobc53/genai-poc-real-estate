@@ -1,0 +1,19 @@
+# Entornos virtuales
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos IFC
+data/
+*.ifc
+
+# Editor / sistema
+.vscode/
+.DS_Store
+Thumbs.db
