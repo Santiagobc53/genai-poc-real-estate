@@ -114,6 +114,6 @@ Como pasos posteriores a esta propuesta inicial, se consideran las siguientes ac
 - Evaluar la integración con servicios de Generative AI en Google Cloud (por ejemplo, Vertex AI).
 - Analizar la ampliación del POC a otros datasets o escenarios de uso más avanzados.
 
-Estos pasos se plantean como una evolución progresiva del POC, sin comprometer aún una implementación productiva.
+Estos pasos se plantean como una evolución progresiva del POC, sin comprometer aún una implementación productiva. 
 
 
