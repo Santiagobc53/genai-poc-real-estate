@@ -1,119 +1,107 @@
-# Generative AI POC – Comprensión de Datos de Proyectos Inmobiliarios
+# Generative AI POC – Proyectos Inmobiliarios (CRISP-DM)
 
 ## Descripción general
 
-Este proyecto presenta una Prueba de Concepto (POC) enfocada en evaluar el uso de Inteligencia Artificial Generativa (GenAI) para la comprensión y análisis de datos técnicos de proyectos inmobiliarios.
+Este repositorio contiene una **Prueba de Concepto (POC)** orientada a evaluar el uso de **Inteligencia Artificial Generativa (GenAI)** para la comprensión y análisis de datos técnicos de proyectos inmobiliarios, utilizando archivos **IFC (Industry Foundation Classes)** como fuente principal de información.
 
-La POC explora cómo los modelos de GenAI pueden interpretar información estructurada y semi-estructurada —como archivos IFC y datasets sintéticos de proyectos inmobiliarios— y responder preguntas en lenguaje natural sobre las características de un proyecto.
+La POC forma parte del **Applied Generative AI Workshop para Twarco**, cuyo objetivo es demostrar, en una sesión práctica de **60–90 minutos**, cómo **Google Cloud Vertex AI (Gemini)** puede responder preguntas en lenguaje natural sobre datasets técnicos de proyectos inmobiliarios.
 
-Los datos utilizados corresponden a archivos de muestra y conjuntos de datos sintéticos, diseñados para pruebas y experimentación. Estos datos no representan información productiva final, lo cual es consistente con el objetivo de la POC: validar la viabilidad técnica del enfoque y demostrar el valor potencial del uso de GenAI, sin desarrollar una solución lista para producción.
+El proyecto está estructurado siguiendo la metodología **CRISP-DM (Cross-Industry Standard Process for Data Mining)**, una metodología estándar y ampliamente utilizada en proyectos reales de ciencia de datos y machine learning.
 
-Este trabajo forma parte de la fase de preparación para un Applied Generative AI Workshop.
+---
 
-## Objetivo y alcance del POC
+## Objetivo del POC
 
-### Objetivo
+El objetivo principal de esta POC es:
 
-El objetivo principal de esta Prueba de Concepto (POC) es evaluar la viabilidad técnica de utilizar Inteligencia Artificial Generativa (GenAI) para interpretar datos técnicos de proyectos inmobiliarios y permitir la consulta de dicha información mediante preguntas en lenguaje natural.
+- Validar la **viabilidad técnica** de utilizar GenAI para interpretar datos técnicos complejos (IFC).
+- Transformar información **estructurada y semi-estructurada** en respuestas comprensibles para usuarios no técnicos.
+- Demostrar **valor práctico** para casos de uso como ventas, soporte comercial y comprensión general de proyectos inmobiliarios.
 
-La POC busca demostrar que, a partir de datasets estructurados o semi-estructurados, es posible extraer información relevante y presentarla de forma comprensible para distintos perfiles de usuario.
+Esta POC **no busca construir una solución productiva**, sino servir como base técnica y demostrativa para el workshop.
 
-### Alcance
+---
 
-Dentro del alcance de esta POC se incluyen las siguientes actividades:
+## Alcance y limitaciones
 
-- Análisis de datasets de proyectos inmobiliarios (por ejemplo, archivos IFC y datasets sintéticos).
-- Transformación de información técnica a un formato textual o estructurado comprensible.
-- Diseño de prompts para la interacción con modelos de Generative AI.
-- Demostración de respuestas a preguntas relacionadas con las características de un proyecto inmobiliario.
+### Dentro del alcance
 
-Fuera del alcance de esta POC se encuentran:
+- Análisis y exploración de archivos IFC de ejemplo.
+- Ingesta, preparación y transformación de datos técnicos para consumo por modelos GenAI.
+- Documentación detallada de las etapas:
+  - Business Understanding
+  - Data Understanding
+  - Data Preparation  
+  siguiendo la metodología CRISP-DM.
+- Validación técnica inicial mediante notebooks.
 
-- Desarrollo de una solución lista para producción.
-- Implementación de interfaces de usuario finales.
-- Optimización avanzada, escalabilidad o despliegue en entornos productivos.
+### Fuera del alcance (en esta fase)
+
+- Integración directa con Vertex AI (pendiente de aprobación).
+- Despliegue productivo o escalabilidad.
+- Interfaces de usuario finales.
 - Entrenamiento o ajuste fino de modelos de IA.
 
-## Dataset y material de trabajo
+---
 
-Para el desarrollo de esta Prueba de Concepto (POC) se utilizarán datasets de muestra y datos sintéticos relacionados con proyectos inmobiliarios. Estos datasets permiten trabajar con información técnica realista sin depender de datos productivos.
+## Estructura del repositorio
 
-### Archivos IFC (buildingSMART)
+```text
+.
+├── notebooks/
+│   └── 01_ifc_exploracion.ipynb     # Exploración técnica y validación inicial
+├── docs/
+│   ├── poc_crispdm.md               # Propuesta del POC estructurada por CRISP-DM
+│   ├── INGESTA_PREPROCESAMIENTO_DATOS.md
+│   │                               # Ingesta y preparación de datos (Etapas 2 y 3)
+│   └── feedback_crisp-dm.md         # Feedback recibido para la propuesta
+├── data/
+│   └── sample.ifc                   # Archivo IFC de ejemplo
+├── requirements.txt
+└── README.md
+Metodología
+La POC sigue explícitamente la metodología CRISP-DM, cubriendo en esta fase:
 
-Se utilizarán archivos IFC (Industry Foundation Classes) provenientes de repositorios de ejemplo de buildingSMART. Estos archivos contienen información estructurada sobre elementos de un proyecto inmobiliario, como espacios, componentes y relaciones entre elementos.
+Etapa 1 – Business Understanding
 
-Los archivos IFC empleados corresponden a datos de prueba diseñados para interoperabilidad y validación de conceptos, lo cual resulta adecuado para el alcance de esta POC.
+Etapa 2 – Data Understanding
 
-Referencia:
-- buildingSMART Community Sample Test Files
+Etapa 3 – Data Preparation
 
-### Structured3D
+Las etapas posteriores (Modeling con Vertex AI, Evaluation y Deployment) están planificadas, pero no se ejecutan en esta fase hasta contar con aprobación formal de la propuesta.
 
-Como material complementario, se considera el uso del dataset Structured3D, un conjunto de datos sintético y fotorealista que contiene diseños de espacios interiores con anotaciones estructurales y semánticas.
+Datasets utilizados
+Archivos IFC (buildingSMART)
+Archivos de ejemplo públicos utilizados para pruebas y demostración de interoperabilidad BIM.
 
-Este dataset se plantea como una posible extensión del POC para explorar escenarios más avanzados de análisis y comprensión de información espacial y estructurada.
+Structured3D (extensión futura)
+Dataset sintético considerado únicamente como posible extensión del proyecto.
+No se utiliza en la fase actual del POC.
 
-Referencia:
-- Structured3D dataset
+No se emplean datos reales ni información sensible.
 
-### Consideraciones sobre los datos
+Estado actual del proyecto
+✔ Propuesta documentada y estructurada según CRISP-DM
 
-Los datasets utilizados en esta POC tienen un propósito exclusivamente exploratorio y demostrativo. No se utilizan datos reales de clientes ni información sensible, y no se busca representar un entorno productivo final.
+✔ Ingesta y preparación de datos completamente documentadas
 
-## Arquitectura propuesta (alto nivel)
+✔ Notebook funcional para exploración y validación técnica
 
-La arquitectura propuesta para esta Prueba de Concepto (POC) se plantea de forma simple y modular, con el objetivo de facilitar la comprensión del flujo de datos y la interacción con modelos de Inteligencia Artificial Generativa.
+⏳ Integración con Vertex AI pendiente de aprobación
 
-A alto nivel, el flujo del POC se compone de las siguientes etapas:
+Próximos pasos (una vez aprobada la propuesta)
+Etapa 4: Modelado con Vertex AI (Gemini)
 
-1. **Adquisición de datos**  
-   Carga de datasets de proyectos inmobiliarios, tales como archivos IFC y datos sintéticos estructurados.
+Diseño y validación de prompts optimizados
 
-2. **Procesamiento de datos**  
-   Extracción de información relevante desde los datasets y transformación de los datos técnicos a un formato estructurado o textual comprensible (por ejemplo, JSON o texto descriptivo).
+Definición de métricas de evaluación
 
-3. **Diseño de prompts**  
-   Definición de prompts que permitan guiar al modelo de Generative AI para interpretar la información del proyecto y responder preguntas en lenguaje natural.
+Estimación de costos con GCP Pricing Calculator
 
-4. **Interacción con Generative AI**  
-   El modelo de GenAI recibe una pregunta del usuario y genera una respuesta basada en la información procesada del proyecto inmobiliario.
+Preparación de demo para el workshop
 
-5. **Salida de resultados**  
-   Presentación de respuestas en lenguaje natural, enfocadas en describir características, componentes y atributos del proyecto inmobiliario.
+Nota final
 
-## Ejemplos de preguntas
-
-A continuación se presentan ejemplos de preguntas que pueden realizarse al sistema durante la demostración de la POC:
-
-- ¿Qué tipo de proyecto inmobiliario representa este dataset?
-- ¿Cuántos espacios o ambientes contiene el proyecto?
-- ¿Cuáles son los principales componentes del edificio?
-- ¿Se puede generar un resumen general del proyecto?
-- ¿Qué información técnica relevante se puede extraer a partir de los datos disponibles?
-
-Estas preguntas ilustran cómo la información técnica puede ser consultada mediante lenguaje natural, facilitando la comprensión del proyecto.
-
-## Resultados esperados y próximos pasos
-
-### Resultados esperados
-
-Se espera que esta Prueba de Concepto (POC) permita demostrar que:
-
-- Los datos técnicos de proyectos inmobiliarios pueden ser procesados y transformados en información comprensible.
-- Los modelos de Inteligencia Artificial Generativa pueden responder preguntas en lenguaje natural a partir de datasets estructurados y semi-estructurados.
-- El enfoque propuesto tiene valor potencial para casos de uso como análisis de proyectos, soporte a ventas y comprensión de información técnica.
-
-Estos resultados buscan validar la viabilidad del enfoque y servir como base para futuras iteraciones.
-
-### Próximos pasos
-
-Como pasos posteriores a esta propuesta inicial, se consideran las siguientes actividades:
-
-- Implementar un prototipo funcional mínimo (por ejemplo, mediante un notebook o script).
-- Ajustar y mejorar los prompts utilizados para la interacción con el modelo de GenAI.
-- Evaluar la integración con servicios de Generative AI en Google Cloud (por ejemplo, Vertex AI).
-- Analizar la ampliación del POC a otros datasets o escenarios de uso más avanzados.
-
-Estos pasos se plantean como una evolución progresiva del POC, sin comprometer aún una implementación productiva. 
+Este repositorio representa una POC realista, acotada y alineada con prácticas profesionales, diseñada para ser evaluada, iterada y extendida una vez aprobada la fase de propuesta.
 
 
