@@ -564,7 +564,18 @@ consistentes y adecuados para una demostración en tiempo real.
 En una fase productiva, este pipeline podría automatizarse y escalarse
 utilizando servicios de Google Cloud como Cloud Storage, Dataflow o
 Vertex AI Pipelines.
-    
+
+## 3.10 Control de Calidad de Datos (Conceptual)
+
+Durante esta POC, el control de calidad se realiza de forma descriptiva y manual,
+verificando consistencia, completitud básica y coherencia semántica.
+
+En una fase productiva, podrían incorporarse métricas formales como:
+- porcentaje de atributos nulos
+- entidades huérfanas
+- consistencia de relaciones
+
+
 
 
 
