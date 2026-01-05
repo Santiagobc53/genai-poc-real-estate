@@ -567,15 +567,54 @@ Vertex AI Pipelines.
 
 ## 3.10 Control de Calidad de Datos (Conceptual)
 
+El control de calidad de datos es un componente crítico para garantizar que la información
+utilizada por los modelos de Generative AI sea confiable, consistente y adecuada para
+responder preguntas en lenguaje natural.
+
 Durante esta POC, el control de calidad se realiza de forma descriptiva y manual,
-verificando consistencia, completitud básica y coherencia semántica.
+verificando consistencia, completitud básica y coherencia semántica de los datos procesados.
 
-En una fase productiva, podrían incorporarse métricas formales como:
-- porcentaje de atributos nulos
-- entidades huérfanas
-- consistencia de relaciones
+En una fase productiva, podrían incorporarse métricas automáticas y validaciones más
+avanzadas.
 
+### 3.10.1 Dimensiones de Calidad Evaluadas
 
+Para esta POC, se consideran las siguientes dimensiones de calidad:
+
+- **Completitud**: presencia de atributos clave en las entidades seleccionadas  
+- **Consistencia**: coherencia entre conteos, relaciones y estructuras  
+- **Validez**: cumplimiento del estándar IFC y capacidad de procesamiento  
+- **Trazabilidad**: posibilidad de rastrear la información hasta el archivo IFC original  
+
+### 3.10.2 Métricas de Calidad Básicas (Conceptuales)
+
+Ejemplos de métricas consideradas en esta POC:
+
+- Porcentaje de entidades con nombre o identificador válido  
+- Número de entidades huérfanas (sin relaciones claras)  
+- Porcentaje de atributos nulos en entidades prioritarias  
+- Errores de parsing o validación por archivo IFC  
+
+Estas métricas permiten identificar riesgos de calidad antes de generar el contexto
+utilizado por GenAI.
+
+### 3.10.3 Estrategias de Manejo de Datos Deficientes
+
+Cuando se detectan problemas de calidad:
+
+- Los datos incompletos no se completan artificialmente  
+- Se documenta explícitamente la ausencia de información  
+- Se evita inferir atributos no presentes en los datos  
+- Se ajustan los prompts para reflejar limitaciones del dataset  
+
+### 3.10.4 Rol del Control de Calidad en la Demo
+
+El control de calidad permite:
+
+- Respuestas más confiables durante el workshop  
+- Reducción del riesgo de alucinaciones  
+- Transparencia frente a las limitaciones de los datos  
+- Mayor confianza de los stakeholders en el enfoque propuesto  
 
 
 
