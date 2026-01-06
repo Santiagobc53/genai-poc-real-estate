@@ -1,107 +1,150 @@
-# Generative AI POC – Proyectos Inmobiliarios (CRISP-DM)
+Generative AI POC – Proyectos Inmobiliarios (CRISP-DM)
 
-## Descripción general
+Este repositorio contiene una Prueba de Concepto (POC) orientada a evaluar el uso de Inteligencia Artificial Generativa (GenAI) para la comprensión y análisis de datos técnicos de proyectos inmobiliarios, utilizando archivos IFC (Industry Foundation Classes) como fuente principal.
 
-Este repositorio contiene una **Prueba de Concepto (POC)** orientada a evaluar el uso de **Inteligencia Artificial Generativa (GenAI)** para la comprensión y análisis de datos técnicos de proyectos inmobiliarios, utilizando archivos **IFC (Industry Foundation Classes)** como fuente principal de información.
+La POC forma parte de un Applied Generative AI Workshop (60–90 min), cuyo objetivo es demostrar cómo un modelo de GenAI (por ejemplo, Vertex AI / Gemini) puede responder preguntas en lenguaje natural sobre datasets técnicos (IFC), manteniendo un alcance controlado, trazabilidad de datos y evitando inferencias no sustentadas.
 
-La POC forma parte del **Applied Generative AI Workshop para Twarco**, cuyo objetivo es demostrar, en una sesión práctica de **60–90 minutos**, cómo **Google Cloud Vertex AI (Gemini)** puede responder preguntas en lenguaje natural sobre datasets técnicos de proyectos inmobiliarios.
-
-El proyecto está estructurado siguiendo la metodología **CRISP-DM (Cross-Industry Standard Process for Data Mining)**, una metodología estándar y ampliamente utilizada en proyectos reales de ciencia de datos y machine learning.
-
----
-
-## Objetivo del POC
+🎯 Objetivo del POC
 
 El objetivo principal de esta POC es:
 
-- Validar la **viabilidad técnica** de utilizar GenAI para interpretar datos técnicos complejos (IFC).
-- Transformar información **estructurada y semi-estructurada** en respuestas comprensibles para usuarios no técnicos.
-- Demostrar **valor práctico** para casos de uso como ventas, soporte comercial y comprensión general de proyectos inmobiliarios.
+Validar la viabilidad técnica de transformar datos IFC en contexto estructurado y texto comprensible para consultas en lenguaje natural.
 
-Esta POC **no busca construir una solución productiva**, sino servir como base técnica y demostrativa para el workshop.
+Diseñar un flujo reproducible de ingesta, exploración, limpieza mínima y métricas derivadas, sin análisis geométrico o estructural.
 
----
+Demostrar valor práctico para audiencias ejecutivas, comerciales y técnicas, sin inventar datos ni sobreinterpretar la información disponible.
 
-## Alcance y limitaciones
+Esta POC no busca construir una solución productiva, sino servir como base técnica y demostrativa para el workshop.
 
-### Dentro del alcance
+📌 Alcance y limitaciones (resumen)
+Dentro del alcance
 
-- Análisis y exploración de archivos IFC de ejemplo.
-- Ingesta, preparación y transformación de datos técnicos para consumo por modelos GenAI.
-- Documentación detallada de las etapas:
-  - Business Understanding
-  - Data Understanding
-  - Data Preparation  
-  siguiendo la metodología CRISP-DM.
-- Validación técnica inicial mediante notebooks.
+Exploración de un archivo IFC de ejemplo.
 
-### Fuera del alcance (en esta fase)
+Conteo e inventario de entidades (por ejemplo: IfcSpace, IfcWall, IfcDoor, IfcWindow).
 
-- Integración directa con Vertex AI (pendiente de aprobación).
-- Despliegue productivo o escalabilidad.
-- Interfaces de usuario finales.
-- Entrenamiento o ajuste fino de modelos de IA.
+Limpieza mínima de datos y cálculo de métricas derivadas simples (relaciones y promedios).
 
----
+Generación de contexto estructurado (JSON) y resumen textual para consultas con GenAI.
 
-## Estructura del repositorio
+Trazabilidad básica (validación del archivo, tamaño, hash).
 
-```text
+Fuera del alcance (en esta fase)
+
+Integración productiva con Vertex AI (pendiente de aprobación).
+
+Análisis geométrico, estructural, energético, normativo o de costos.
+
+Enriquecimiento con fuentes externas (catálogos, GIS, precios, normativas, etc.).
+
+Interfaz de usuario, base de datos, despliegue o escalabilidad.
+
+Fine-tuning o entrenamiento de modelos de IA.
+
+🧭 Metodología (CRISP-DM)
+
+La POC sigue explícitamente la metodología CRISP-DM:
+
+Etapa 1 – Business Understanding: documentada en docs/ (propuesta / CRISP-DM).
+
+Etapas 2 y 3 – Data Understanding & Data Preparation: implementadas y demostradas en el notebook (ingesta, inventario, limpieza y métricas controladas).
+
+Etapa 4 – Modeling (Vertex AI): planificada como siguiente paso (no ejecutada en esta fase).
+
+🗂️ Estructura del repositorio
 .
 ├── notebooks/
-│   └── 01_ifc_exploracion.ipynb     # Exploración técnica y validación inicial
+│   └── 01_ifc_exploracion.ipynb               # Exploración técnica + contexto para GenAI (Etapas 2–3)
 ├── docs/
-│   ├── poc_crispdm.md               # Propuesta del POC estructurada por CRISP-DM
-│   ├── INGESTA_PREPROCESAMIENTO_DATOS.md
-│   │                               # Ingesta y preparación de datos (Etapas 2 y 3)
-│   └── feedback_crisp-dm.md         # Feedback recibido para la propuesta
+│   ├── poc_crispdm.md                         # Propuesta del POC estructurada por CRISP-DM
+│   ├── INGESTA_PREPROCESAMIENTO_DATOS.md      # Detalle de ingesta y preparación (Etapas 2–3)
+│   └── feedback_crisp-dm.md                   # Feedback recibido para la propuesta
 ├── data/
-│   └── sample.ifc                   # Archivo IFC de ejemplo
+│   └── sample.ifc                             # IFC de ejemplo
 ├── requirements.txt
 └── README.md
-Metodología
-La POC sigue explícitamente la metodología CRISP-DM, cubriendo en esta fase:
 
-Etapa 1 – Business Understanding
+⚙️ Requisitos
 
-Etapa 2 – Data Understanding
+Python 3.10+ (recomendado 3.10 / 3.11)
 
-Etapa 3 – Data Preparation
+Entorno virtual (venv)
 
-Las etapas posteriores (Modeling con Vertex AI, Evaluation y Deployment) están planificadas, pero no se ejecutan en esta fase hasta contar con aprobación formal de la propuesta.
+Jupyter Notebook (o VS Code con extensión Jupyter)
 
-Datasets utilizados
-Archivos IFC (buildingSMART)
-Archivos de ejemplo públicos utilizados para pruebas y demostración de interoperabilidad BIM.
+Dependencias listadas en requirements.txt (incluye ifcopenshell)
 
-Structured3D (extensión futura)
-Dataset sintético considerado únicamente como posible extensión del proyecto.
-No se utiliza en la fase actual del POC.
+🚀 Quickstart (ejecución local)
+1) Crear y activar entorno virtual
+
+Windows (PowerShell):
+
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+
+Windows (CMD):
+
+python -m venv venv
+venv\Scripts\activate
+
+
+Linux / macOS:
+
+python -m venv venv
+source venv/bin/activate
+
+2) Instalar dependencias
+pip install -r requirements.txt
+
+3) Ejecutar el notebook
+
+Abre notebooks/01_ifc_exploracion.ipynb en VS Code (Jupyter) y ejecútalo en orden, o bien:
+
+jupyter notebook
+
+🧪 ¿Qué produce el notebook?
+
+A partir del IFC de ejemplo, el flujo genera:
+
+Conteos base (espacios, muros, puertas, ventanas).
+
+Limpieza mínima de nombres de espacios y validación de consistencia.
+
+Métricas derivadas simples (por ejemplo, muros por espacio, ventanas por espacio).
+
+Contexto estructurado (JSON) y resumen textual para ser usados como entrada a un modelo de GenAI.
+
+Sección de preguntas de demostración alineadas con el alcance y con control explícito de inferencias.
+
+📚 Datasets utilizados
+
+IFC (buildingSMART / ejemplos públicos): archivos de demostración para interoperabilidad BIM.
+
+Structured3D (extensión futura): considerado como posible ampliación, no usado en esta fase.
 
 No se emplean datos reales ni información sensible.
 
-Estado actual del proyecto
-✔ Propuesta documentada y estructurada según CRISP-DM
+📊 Estado del proyecto
 
-✔ Ingesta y preparación de datos completamente documentadas
+✅ Propuesta documentada y estructurada según CRISP-DM (docs/)
 
-✔ Notebook funcional para exploración y validación técnica
+✅ Ingesta y preparación de datos documentadas
 
-⏳ Integración con Vertex AI pendiente de aprobación
+✅ Notebook funcional y reproducible para exploración y validación técnica
 
-Próximos pasos (una vez aprobada la propuesta)
-Etapa 4: Modelado con Vertex AI (Gemini)
+⏳ Integración con Vertex AI (Gemini) pendiente de aprobación
 
-Diseño y validación de prompts optimizados
+🔜 Próximos pasos (cuando se apruebe Etapa 4)
 
-Definición de métricas de evaluación
+Integración conceptual con Vertex AI (Gemini) usando el contexto generado.
 
-Estimación de costos con GCP Pricing Calculator
+Estandarización y versionado del esquema de contexto (JSON + texto).
 
-Preparación de demo para el workshop
+Variantes de prompt por perfil (ejecutivo / comercial / técnico).
 
-Nota final
+Definición de métricas de evaluación y guion de demo.
 
-Este repositorio representa una POC realista, acotada y alineada con prácticas profesionales, diseñada para ser evaluada, iterada y extendida una vez aprobada la fase de propuesta.
+📝 Nota final
 
-
+Este repositorio representa una POC realista, acotada y alineada con buenas prácticas, diseñada para ser evaluada, iterada y extendida una vez aprobada la fase de arquitectura y modelado.
