@@ -51,9 +51,7 @@ Etapas 2 y 3 – Data Understanding & Data Preparation: implementadas y demostra
 
 Etapa 4 – Modeling (Vertex AI): planificada como siguiente paso (no ejecutada en esta fase).
 
-## 🗂️ Estructura del repositorio
-
-```text
+🗂️ Estructura del repositorio
 .
 ├── notebooks/
 │   └── 01_ifc_exploracion.ipynb               # Exploración técnica + contexto para GenAI (Etapas 2–3)
@@ -65,7 +63,6 @@ Etapa 4 – Modeling (Vertex AI): planificada como siguiente paso (no ejecutada 
 │   └── sample.ifc                             # IFC de ejemplo
 ├── requirements.txt
 └── README.md
-
 
 ⚙️ Requisitos
 
@@ -150,5 +147,4 @@ Definición de métricas de evaluación y guion de demo.
 
 📝 Nota final
 
-Este repositorio representa una POC realista, acotada y alineada con buenas prácticas, diseñada para ser evaluada, iterada y extendida una vez aprobada la fase de arquitectura y modelado.
 Este repositorio representa una POC realista, acotada y alineada con buenas prácticas, diseñada para ser evaluada, iterada y extendida una vez aprobada la fase de arquitectura y modelado.
