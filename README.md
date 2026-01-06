@@ -148,3 +148,4 @@ Definición de métricas de evaluación y guion de demo.
 📝 Nota final
 
 Este repositorio representa una POC realista, acotada y alineada con buenas prácticas, diseñada para ser evaluada, iterada y extendida una vez aprobada la fase de arquitectura y modelado.
+Este repositorio representa una POC realista, acotada y alineada con buenas prácticas, diseñada para ser evaluada, iterada y extendida una vez aprobada la fase de arquitectura y modelado.
